@@ -18,11 +18,11 @@ public class WordCount {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Please, enter any text: ");
-		System.out.println("Amount of words in your text: " + getWordsAmount(sc.nextLine()));
+		System.out.println("Number of words in your text: " + getWordCount(sc.nextLine()));
 	}
 
-	public static int getWordsAmount(String text) {
-		return text.split(" ").length;
+	public static int getWordCount(String inputText) {
+		return inputText.split(" ").length;
 	}
 
 }
