@@ -46,7 +46,7 @@ public class ArrayExtension {
 		Random myRandom = new Random();
 		
 		for ( int i = 0; i < amountOfElements; i++) {
-			randArr[i] = myRandom.nextInt(100);
+			randArr[i] = myRandom.nextInt(100) + 1;
 		}
 		return randArr;
 	}
