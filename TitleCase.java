@@ -17,7 +17,7 @@ public class TitleCase {
 		String userInput = sc.nextLine();
 
 		System.out.println(firstCharToTitleCase(userInput));
-		System.out.println(firstCharToTitleCaseTest(userInput));
+		System.out.println(firstCharToTitleCaseRetainWhitespace(userInput));
 	}
 
 	public static String firstCharToTitleCase(String string) {
@@ -30,15 +30,16 @@ public class TitleCase {
 		return returnString.stripTrailing();
 	}
 
-	public static String firstCharToTitleCaseTest(String string) {
+	public static String firstCharToTitleCaseRetainWhitespace(String string) {
 		String returnString = "";
-		String[] words = string.toLowerCase().split(" ");
-		for (String word: words) {
-		    if (word.length() > 0)
-			returnString += word.substring(0,1).toUpperCase() + word.substring(1) + " ";
+		char[] characters = string.toLowerCase().toCharArray();
+		for (int i = 0; i < characters.length; i++) {
+			if (i == 0 || Character.isWhitespace(characters[i - 1])) {
+				returnString += String.valueOf(characters[i]).toUpperCase();
+			} else {
+				returnString += String.valueOf(characters[i]);
+			}
 		}
-		
-		return returnString.stripTrailing();
+		return returnString;
 	}
-
 }

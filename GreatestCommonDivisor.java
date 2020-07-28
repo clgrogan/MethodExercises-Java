@@ -1,4 +1,5 @@
-package com.MethodCodingExercises;import java.util.Scanner;
+package com.MethodCodingExercises;
+import java.util.Scanner;
 public class GreatestCommonDivisor {
 
 	public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class GreatestCommonDivisor {
 	
 	public static int gcdRecursive(int firstNumber, int secondNumber) {
         if (secondNumber == 0) {
-            return firstNumber;
+            return Math.abs(firstNumber);
         }
         return gcdRecursive(secondNumber, firstNumber % secondNumber);
 	}
